@@ -15,18 +15,10 @@ class BudgetController extends Controller
      */
     public function index()
     {
-        //
+        return Budget::all();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -36,7 +28,7 @@ class BudgetController extends Controller
      */
     public function store(StoreBudgetRequest $request)
     {
-        //
+        return Budget::create($request->validated());
     }
 
     /**
@@ -47,19 +39,9 @@ class BudgetController extends Controller
      */
     public function show(Budget $budget)
     {
-        //
+        return $budget;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Budget  $budget
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Budget $budget)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -70,7 +52,8 @@ class BudgetController extends Controller
      */
     public function update(UpdateBudgetRequest $request, Budget $budget)
     {
-        //
+        $budget->update($request->validated());
+        return $budget;
     }
 
     /**
@@ -81,6 +64,7 @@ class BudgetController extends Controller
      */
     public function destroy(Budget $budget)
     {
-        //
+        $budget->delete();
+        return response()->json(null,204);
     }
 }
