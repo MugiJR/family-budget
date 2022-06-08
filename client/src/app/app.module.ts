@@ -8,6 +8,10 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { BudgetListComponent } from './budget-list/budget-list.component';
 import { AboutPageComponent } from './about-page/about-page.component';
+import { BudgetFormComponent } from './budget-form/budget-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BudgetEditComponent } from './budget-edit/budget-edit.component';
+import { HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -15,12 +19,18 @@ import { AboutPageComponent } from './about-page/about-page.component';
     NavBarComponent,
     MainPageComponent,
     BudgetListComponent,
-    AboutPageComponent
+    AboutPageComponent,
+    BudgetFormComponent,
+    BudgetEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

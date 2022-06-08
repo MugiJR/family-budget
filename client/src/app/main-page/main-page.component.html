@@ -1,7 +1,25 @@
 <div class="jumbotron">
     <div class="container">
-      <h1 class="display-4">Issue tracker</h1>
-      <p class="lead">Submit issues and track them!</p>
-      <p><a class="btn btn-primary" href="#" role="button">New issue</a></p>
+      <h1 class="display-4"><p>Budget Summary</p></h1>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+            <div class="card-header">OverAll Income</div>
+            <div class="card-body">
+              <h5 class="card-title">{{getOverAllIncome()}}</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+            <div class="card-header">OverAll Outcome</div>
+            <div class="card-body">
+              <h5 class="card-title">{{getOverAllOutcome()}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
     </div>
   </div>

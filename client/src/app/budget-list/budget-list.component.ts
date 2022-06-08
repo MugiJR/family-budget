@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Budget } from '../budget';
+import { BudgetService } from '../budget.service';
+
 
 @Component({
   selector: 'app-budget-list',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BudgetListComponent implements OnInit {
 
-  constructor() { }
+  public budgets:Budget[] = [];
 
-  ngOnInit(): void {
+  public selectedBudget: Budget | null =  null;
+  constructor(private budgetService : BudgetService) { }
+
+  async ngOnInit() {
+    this.budgets = await this.budgetService.getBudgets();
   }
+
+  public findAmoutType(amount: number) {
+    return amount.toString().charAt(0) === '-' ? "Out" : "In";
+  }
+
 
 }

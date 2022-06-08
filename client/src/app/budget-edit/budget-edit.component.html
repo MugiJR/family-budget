@@ -1,0 +1,3 @@
+<h1 *ngIf="!budget.id">New Budget</h1>
+<h1 *ngIf="budget.id">Edit Budget</h1>
+<app-budget-form [budget]="budget" (save)="handleSave($event)"></app-budget-form>
